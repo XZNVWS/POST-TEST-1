@@ -1,0 +1,311 @@
+:root {
+  /* A lighter, more vibrant red for the main accent */
+  --accent: rgb(172, 66, 66);
+  /* Renamed from --bg-dark for clarity. A clean, off-white. */
+  --bg-light: #fdfdfd;
+  /* A lighter shade of muted gray */
+  --muted: #777;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Consolidated the body styles for consistency */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  /* Using a soft dark gray for text is easier to read than pure black */
+  color: #333;
+  /* A very light gray background is softer than pure white */
+  background: #f8f9fa;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px;
+  background: var(--bg-light);
+  color: var(--accent);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  /* A much softer shadow for a more subtle effect */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Consolidated nav link styles */
+.main-nav a {
+  /* A lighter text color for better hierarchy */
+  color: #555;
+  text-decoration: none;
+  margin-left: 18px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.main-nav a:hover {
+  background: var(--accent);
+  /* Using white on the hover state for clear contrast */
+  color: #ffffff;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  padding: 48px 32px;
+  /* Replaced harsh #000000 with a sophisticated dark charcoal */
+  background: #212121;
+  /* Set a light text color for all content inside the hero */
+  color: #f0f0f0;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("honda-3.jpg") center/cover no-repeat;
+  /* Made the background image slightly brighter */
+  filter: blur(20px) brightness(0.7);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.hero-content,
+.hero-image {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 260px;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.hero-content p {
+  margin-bottom: 16px;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 6px;
+  height: auto;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.section-desc {
+  margin: 12px 0 24px;
+  font-size: 1rem;
+  /* Softer text color */
+  color: #444;
+  text-align: center;
+}
+
+/* Combined rules for all card text */
+.card h3,
+.card p,
+#features .card .content h3,
+#features .card .content p {
+  color: #3a3a3a;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+}
+
+.btn-primary:hover {
+  /* A lighter, more engaging red for the hover effect */
+  background: #e63946;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--accent);
+  /* Lighter text color */
+  color: #444;
+}
+
+.btn-secondary:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.product-cards,
+.guide {
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 280px;
+  /* Lighter border color */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+  background: white;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  /* Lighter, more subtle shadow */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card .content {
+  padding: 16px;
+  text-align: left;
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+}
+
+.site-footer {
+  background: #fff;
+  color: #555; /* Lighter footer text */
+  text-align: center;
+  padding: 18px 12px;
+  margin-top: 30px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* --- Lighter Styles for Login & Dashboard --- */
+
+.login-container,
+.dashboard-container {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07); /* Lighter shadow */
+  text-align: center;
+}
+
+.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.login-form h2 {
+  margin-bottom: 1.5rem;
+  color: #444; /* Lighter heading */
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Specific styles for the login form's primary button */
+.login-form .btn-primary {
+  display: inline-block;
+  /* A lighter, friendlier blue */
+  background-color: #339af0;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.login-form .btn-primary:hover {
+  /* A corresponding lighter hover state */
+  background-color: #1971c2;
+}
+
+.error {
+  /* Lighter, less alarming error message colors */
+  background-color: #fdeced;
+  color: #a43737;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  border: 1px solid #f9d5d9;
+}
+
+.dashboard-content {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e9ecef; /* Lighter divider */
+}
